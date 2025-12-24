@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Cooking Assistant</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sparkles"></div>
+
+<header>
+  <h2>🍳 AI Cooking Assistant</h2>
+  <div class="menu" onclick="toggleMenu()">☰</div>
+  <nav id="nav">
+    <a onclick="goHome()">🏠 Home</a>
+    <a onclick="goIndian()">🍛 Indian Recipes</a>
+  </nav>
+</header>
+
+<section id="home" class="page show">
+  <h1>Welcome to AI Cooking Assistant ✨</h1>
+  <p>Cook smart • Cook step by step • Cook confidently</p>
+  <button onclick="goIndian()">Start Cooking</button>
+</section>
+
+<section id="indian" class="page">
+  <h1>Indian Recipes 🇮🇳</h1>
+
+  <div class="cards">
+    <div class="card" onclick="goPotato()">
+      <!-- ✅ POTATO IMAGE CONFIRMED -->
+      <img src="https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&w=900&q=80">
+      <h3>Potato Bhaji</h3>
+    </div>
+
+    <div class="card" onclick="goBrinjal()">
+      <img src="https://images.unsplash.com/photo-1608039829572-78524f79c4c7?auto=format&fit=crop&w=900&q=80">
+      <h3>Brinjal Bhaji</h3>
+    </div>
+  </div>
+
+  <button onclick="goHome()">⬅ Back</button>
+</section>
+
+<!-- POTATO -->
+<section id="potato" class="page">
+  <h1>Potato Bhaji 🥔</h1>
+  <p>A comforting Maharashtrian-style potato curry</p>
+
+  <img class="dish-img"
+   src="https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&w=900&q=80">
+
+  <div class="actions">
+    <button onclick="potatoIngredients()">Ready to Cook</button>
+    <button onclick="speak(potatoVoice)">🔊 Voice Help</button>
+    <button onclick="openVideo('https://www.youtube.com/embed/6R6zN1Dg5PQ')">🎥 Watch Video</button>
+    <button onclick="goIndian()">⬅ Back</button>
+  </div>
+</section>
+
+<!-- BRINJAL -->
+<section id="brinjal" class="page">
+  <h1>Brinjal Bhaji 🍆</h1>
+  <p>A spicy and flavorful Indian brinjal curry</p>
+
+  <img class="dish-img"
+   src="https://images.unsplash.com/photo-1608039829572-78524f79c4c7?auto=format&fit=crop&w=900&q=80">
+
+  <div class="actions">
+    <button onclick="brinjalIngredients()">Ready to Cook</button>
+
+    <!-- ✅ ADDED VOICE (SAME AS POTATO) -->
+    <button onclick="speak(brinjalVoice)">🔊 Voice Help</button>
+
+    <!-- ✅ ADDED YOUTUBE -->
+    <button onclick="openVideo('https://www.youtube.com/embed/l5wJZz9rFUk')">🎥 Watch Video</button>
+
+    <button onclick="goIndian()">⬅ Back</button>
+  </div>
+</section>
+
+<section id="ingredients" class="page">
+  <h1 id="ingTitle"></h1>
+  <ul id="ingList"></ul>
+  <button onclick="showSteps()">I have all ingredients</button>
+</section>
+
+<section id="steps" class="page">
+  <h1>Cooking Steps 👩‍🍳</h1>
+
+  <div class="progress">
+    <div id="progressBar"></div>
+  </div>
+
+  <ol id="stepsList"></ol>
+
+  <button onclick="goHome()">🏁 Finish & Go Home</button>
+</section>
+
+<div id="videoModal">
+  <div class="videoBox">
+    <span onclick="closeVideo()">✖</span>
+    <iframe id="videoFrame" allowfullscreen></iframe>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
