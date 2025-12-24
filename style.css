@@ -1,0 +1,160 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
+}
+
+body{
+  background:linear-gradient(135deg,#ffecd2,#fcb69f);
+  overflow-x:hidden;
+}
+
+header{
+  background:#ff6f00;
+  color:white;
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.menu{font-size:26px;cursor:pointer;}
+
+nav{
+  display:none;
+  position:absolute;
+  top:60px;
+  right:20px;
+  background:white;
+  border-radius:12px;
+}
+
+nav a{
+  display:block;
+  padding:12px;
+  cursor:pointer;
+}
+
+.page{
+  display:none;
+  padding:40px 20px;
+  text-align:center;
+  min-height:90vh;
+}
+
+.show{
+  display:block;
+  animation:fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:25px;
+  margin-top:30px;
+}
+
+.card{
+  background:white;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  cursor:pointer;
+  transition:0.4s;
+}
+
+.card:hover{transform:scale(1.08);}
+
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:15px 15px 0 0;
+}
+
+.dish-img{
+  width:90%;
+  max-width:420px;
+  height:260px;
+  object-fit:cover;
+  border-radius:25px;
+  margin:20px auto;
+}
+
+button{
+  background:#ff5722;
+  color:white;
+  border:none;
+  padding:12px 25px;
+  margin:8px;
+  border-radius:30px;
+  cursor:pointer;
+}
+
+ul,ol{
+  max-width:650px;
+  margin:20px auto;
+  text-align:left;
+}
+
+.progress{
+  width:80%;
+  height:15px;
+  background:#ddd;
+  margin:20px auto;
+  border-radius:10px;
+}
+
+#progressBar{
+  width:0%;
+  height:100%;
+  background:linear-gradient(45deg,#43cea2,#185a9d);
+  border-radius:10px;
+  transition:0.4s;
+}
+
+/* Sparkles */
+.sparkles::before{
+  content:"✨✨✨";
+  position:fixed;
+  top:20px;
+  left:20px;
+  animation:spark 2s infinite alternate;
+}
+
+@keyframes spark{
+  from{opacity:0.4;}
+  to{opacity:1;}
+}
+
+/* Video popup */
+#videoModal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+}
+
+.videoBox{
+  background:white;
+  width:80%;
+  max-width:500px;
+  margin:10% auto;
+  padding:15px;
+  border-radius:15px;
+}
+
+.videoBox iframe{
+  width:100%;
+  height:280px;
+}
+
+.videoBox span{
+  float:right;
+  cursor:pointer;
+}
